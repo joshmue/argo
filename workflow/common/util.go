@@ -209,6 +209,7 @@ func ExecPodContainer(restConfig *rest.Config, namespace string, pod string, con
 		Namespace(namespace).
 		SubResource("exec").
 		Param("container", container).
+		Param("stdin", fmt.Sprintf("%v", true)).
 		Param("stdout", fmt.Sprintf("%v", stdout)).
 		Param("stderr", fmt.Sprintf("%v", stderr)).
 		Param("tty", "false")
